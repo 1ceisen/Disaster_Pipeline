@@ -37,6 +37,7 @@ def clean(df):
         categories[col] = pd.to_numeric(categories[col])
     df = df.drop(['categories'], axis=1) #Drop categories column
     df = pd.concat([df,categories], axis=1) #Concat news categories to df dataframe
+    df = df[df.related != 2]
     return df
 
 

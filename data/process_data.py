@@ -50,7 +50,7 @@ def save(df, database_filename):
         A SQLite database with table labeled 'DboMessages'
     '''
     eng = create_engine('sqlite:///' + database_filename) #Store sqlite engine call
-    df.to_sql('DboMessages', eng, index=False) #Store database object 'DboMessages'
+    df.to_sql('DboMessages', eng, index=False, if_exists = 'replace') #Store database object 'DboMessages'
 
     
 def main():
